@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:mapperLocations="classpath:mapper/**/*.xml"
+          p:typeAliasesPackage="com.smart.web.entity"
+          p:configLocation="classpath:mybatis-config.xml"
+    />
+    <!--<bean class="org.apache.ibatis.session.Configuration"
+          p:mapUnderscoreToCamelCase="true"
+    />-->
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+          p:basePackage="com.smart.web.**.mapper"
+          p:sqlSessionFactoryBeanName="sqlSessionFactory"
+    />
+</beans>
