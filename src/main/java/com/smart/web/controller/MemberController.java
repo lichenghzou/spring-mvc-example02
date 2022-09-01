@@ -28,4 +28,10 @@ public class MemberController {
     public ResponseResult<Integer> login(String username, String password){
         return ResponseResult.success(memberService.login(username,password));
     }
+
+    @PostMapping("/change/password")
+    public int change(String username, String password){
+        System.out.println("2 核心代码,测试拦截器");
+        return 1;
+    }
 }

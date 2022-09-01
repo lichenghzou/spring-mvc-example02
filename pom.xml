@@ -7,15 +7,9 @@
   <groupId>org.example</groupId>
   <artifactId>spring-mvc-example02</artifactId>
   <version>1.0-SNAPSHOT</version>
-<!--  <packaging>war</packaging>-->
-  <packaging>pom</packaging>
+  <packaging>war</packaging>
 
-  <modules>
-    <module>web-member</module>
-    <module>web-order</module>
-  </modules>
-
-  <name>spring-mvc-example02 Maven Webapp</name>
+  <name>spring-mvc-example02</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

@@ -21,4 +21,16 @@
         <!--        单个文件的大小 10M  byte -->
         <property name="maxUploadSizePerFile" value="10485760"/>
     </bean>
+
+    <mvc:interceptors>
+        <!-- 注册拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/member/**"/>
+            <!--不拦截-->
+            <mvc:exclude-mapping path="/member/login"/>
+            <mvc:exclude-mapping path="/member/register"/>
+            <!--自定义拦截器只能再最后注册-->
+            <bean class="com.smart.web.common.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
